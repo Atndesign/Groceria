@@ -1,0 +1,26 @@
+@import '../../../styles.scss';
+
+.list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing;
+    background: #0d0c15;
+    border: 1px solid #1b1a29;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+
+    .item__quantity {
+      margin-right: $spacing / 2;
+    }
+
+    .item__controls {
+      display: flex;
+      .controls__btn {
+        background: transparent;
+        border: 0;
+        margin-left: $spacing * 2;
+      }
+    }
+  }
+
