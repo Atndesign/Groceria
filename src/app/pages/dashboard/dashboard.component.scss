@@ -1,0 +1,58 @@
+@import '../../../styles.scss';
+
+.main {
+    padding: $spacing * 2;
+
+    .main__header {
+        .header__title {
+            margin-bottom: $spacing / 2;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .header__subtitle {
+            margin-bottom: $spacing * 2;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 300;
+        }
+    }
+
+    .list {
+        .list__description {
+            margin-bottom: $spacing;
+        }
+
+        .list__container {
+            padding-right: 32px;
+            height: 40vh;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                appearance: none;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 7px;
+                height: 160px;
+                background-color: $primary;
+            }
+        }
+    }
+}
+
+.list__add {
+    width: 48px;
+    height: 48px;
+    background-color: $primary;
+    border: 0;
+    border-radius: 50%;
+    position: fixed;
+    bottom: $spacing *2;
+    right: $spacing *2;
+    transition: transform 0.2s ease-in-out;
+
+    &.--adding {
+        transform: rotate(45deg);
+    }
+}

@@ -1,5 +1,5 @@
 <figure class="list__item">
-  <p class="item__name">
+  <p class="item__name" [ngClass]="{'line': isChecked}">
     <span class="item__quantity">5</span>
     Fricadelles
   </p>
@@ -8,8 +8,9 @@
       <img src="/assets/img/icons/trash.png" alt="delete item" srcSet="/assets/img/icons/trash.svg" height="15"
         width="14" />
     </button>
-    <button class="controls__btn">
-      <img src="/assets/img/icons/checkmark.png" width="18" height="14" />
+    <button class="controls__btn" (click)="checkItem()">
+      <img src="{{ isChecked==true ? '/assets/img/icons/checkmark.png' : '/assets/img/icons/checkmark-outline.png' }}"
+        alt="checkmark" width="18" height="14" />
     </button>
   </div>
 </figure>
