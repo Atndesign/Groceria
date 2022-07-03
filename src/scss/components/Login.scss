@@ -1,0 +1,35 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .login__illustration {
+        margin-bottom: $spacing * 4;
+
+    }
+
+    .login__title {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: bold;
+        margin-bottom: $spacing * 2;
+    }
+
+    .login__btn {
+        display: flex;
+        align-items: center;
+        padding: $spacing;
+        background: #FFFFFF;
+        border: 1px solid #DFDFDF;
+        transition: 0.3s ease-in-out;
+
+        .btn__icon {
+            margin-right: $spacing / 2;
+        }
+
+        &:hover {
+            background: lighten($color: $primary, $amount: 15);
+        }
+    }
+}

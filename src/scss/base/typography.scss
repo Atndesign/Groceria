@@ -1,0 +1,33 @@
+a,
+p,
+h1,
+h2,
+label {
+  font-family: $font-family-base, sans-serif;
+  margin-bottom: 0;
+  color: white;
+}
+
+.section__title {
+  text-align: center;
+  font-size: (24 / 16) * $spacer;
+  font-weight: 700;
+  color: $primary;
+  margin-bottom: $spacer;
+
+  &.--white {
+  }
+}
+
+@include media-breakpoint-tablet {
+  .section__title {
+    text-align: left;
+  }
+}
+
+@include media-breakpoint-desktop {
+  .section__title {
+    text-align: left;
+    font-size: (32 / 16) * $spacer;
+  }
+}

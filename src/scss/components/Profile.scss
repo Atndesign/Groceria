@@ -1,0 +1,36 @@
+.profile {
+    @extend .main;
+
+    .profile__header {
+        @extend.main__header;
+
+        .header__title {
+            margin-bottom: $spacing * 4;
+        }
+
+
+    }
+
+    .user__info {
+        display: flex;
+        justify-content: space-between;
+
+        .info__values {
+            max-width: 50%;
+        }
+
+        .info__label {
+            font-style: normal;
+            font-weight: normal;
+            margin-bottom: $spacing * 2;
+        }
+
+        .info__value {
+            width: 100%;
+            font-weight: 700;
+            margin-bottom: $spacing * 2;
+            color: $primary;
+        }
+    }
+
+}

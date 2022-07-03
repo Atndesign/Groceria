@@ -1,0 +1,48 @@
+.add {
+    padding: $spacing * 2 $spacing * 2;
+    margin-top: $spacing * 4;
+    border: 1px solid #F1F1F1;
+    animation: slideIn 0.3s cubic-bezier(0.07, 0.53, 0.58, 1) forwards;
+
+
+    .add__form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .form__label {
+            display: block;
+            margin-bottom: $spacing / 2;
+        }
+
+        .form__input {
+            padding: $spacing / 2;
+            border: 1px solid #C4C4C4;
+            border-right: 4px solid $primary;
+            margin-bottom: $spacing * 2;
+
+            &.--small {
+                width: 83px;
+            }
+        }
+
+        .form__submit {
+            color: white;
+            padding: $spacing / 1.5 $spacing;
+            background-color: $primary;
+            border: none;
+        }
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+        ;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

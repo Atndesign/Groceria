@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+//Abstract
+@import "./scss/abstract/variables";
+@import "./scss/abstract/responsive";
+
+//Base
+@import "./scss/base/fonts";
+@import "./scss/base/typography";
+
+//Components
+@import "./scss/components/Main.scss";
+@import "./scss/components/ListItem.scss";
+@import "./scss/components/Sidebar.scss";
+@import "./scss/components/Add.scss";
+@import "./scss/components/Login.scss";
+@import "./scss/components/Profile.scss";
+
+//Common
+p,
+span,
+button,
+a,
+li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.topleft {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.bottomright {
+  z-index: -1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+body {
+  background-color: #0d0c15;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//Responsive
+@import "./scss/abstract/responsiveClasses";

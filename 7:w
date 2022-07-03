@@ -1,0 +1,20 @@
+<div class="main">
+  <header class="main__header">
+    <h1 class="header__title">Hello {{ authService.userData.displayName }}</h1>
+    <p class="header__subtitle">Vous avez actuellement 6 articles</p>
+  </header>
+  <main class="list">
+    <p class="list__description">voici votre liste</p>
+    <div class="list__container">
+      <app-list-item></app-list-item>
+      <app-list-item></app-list-item>
+      <app-list-item></app-list-item>
+      <app-list-item></app-list-item>
+      <app-list-item></app-list-item>
+      <app-list-item></app-list-item>
+    </div>
+  </main>
+  <button class="list__add">
+    <img src="./img/icons/cross.png" alt="cross" srcset="./assets/img/icons/cross.svg" />
+  </button>
+</div>
