@@ -1,23 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
   public isOpen: boolean = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public openSideBar(): void {
-    this.isOpen = true
+    this.isOpen = true;
   }
 
   public closeSideBar(): void {
-    this.isOpen = false
+    this.isOpen = false;
+  }
+
+  public signOut(): void {
+    this.authService.SignOut();
   }
 }

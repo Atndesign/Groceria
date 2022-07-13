@@ -1,22 +1,42 @@
-<div class="overlay" [ngClass]="{' --open': isOpen == true}"></div>
+<div class="overlay" [ngClass]="{ ' --open': isOpen == true }"></div>
 <button class="header__toggle-sidebar" (click)="openSideBar()">
-  <img src="/assets/img/icons/bars.png" alt="menu" srcset="/assets/img/icons/bars.svg" />
+  <img
+    src="/assets/img/icons/bars.png"
+    alt="menu"
+    srcset="/assets/img/icons/bars.svg"
+  />
 </button>
-<aside class="sidebar" [ngClass]="{' --open': isOpen === true}">
+<aside class="sidebar" [ngClass]="{ ' --open': isOpen === true }">
   <button class="sidebar__toggle-sidebar" (click)="closeSideBar()">
-    <img src="/assets/img/icons/times.png" alt="menu" srcset="/assets/img/icons/times.svg" />
+    <img
+      src="/assets/img/icons/times.png"
+      alt="menu"
+      srcset="/assets/img/icons/times.svg"
+    />
   </button>
   <ul class="sidebar__menu">
     <li class="menu__item">
-      <img src="/assets/img/icons/user.png" alt="user" srcset="/assets/img/icons/user.svg" />
+      <img
+        src="/assets/img/icons/user.png"
+        alt="user"
+        srcset="/assets/img/icons/user.svg"
+      />
       Ma liste
     </li>
     <li class="menu__item">
-      <img src="/assets/img/icons/user.png" alt="user" srcset="/assets/img/icons/user.svg" />
+      <img
+        src="/assets/img/icons/user.png"
+        alt="user"
+        srcset="/assets/img/icons/user.svg"
+      />
       Mon profil
     </li>
-    <li class="menu__item">
-      <img src="/assets/img/icons/signoff.png" alt="signoff" srcset="/assets/img/icons/signoff.svg" />
+    <li class="menu__item" (click)="signOut()">
+      <img
+        src="/assets/img/icons/signoff.png"
+        alt="signoff"
+        srcset="/assets/img/icons/signoff.svg"
+      />
       Deconnexion
     </li>
   </ul>

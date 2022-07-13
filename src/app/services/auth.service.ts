@@ -1,12 +1,15 @@
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/compat/firestore';
 import * as auth from 'firebase/auth';
 import { Router } from '@angular/router';
 import { User } from '../model/user/user.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   public userData: any; // Save logged in user data
@@ -19,6 +22,7 @@ export class AuthService {
   ) {
     this.afAuth.authState.subscribe((user) => {
       if (user) {
+        console.log(user);
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user')!);
@@ -32,8 +36,7 @@ export class AuthService {
   get isLoggedIn(): boolean {
     const user: any = localStorage.getItem('user');
     const parsed: any = JSON.parse(user);
-    console.log(parsed)
-    return (parsed !== null && parsed.emailVerified !== false) ? true : false;
+    return parsed !== null && parsed.emailVerified !== false ? true : false;
   }
 
   // Sign in with Google
@@ -79,7 +82,7 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['login']);
     });
   }
 }

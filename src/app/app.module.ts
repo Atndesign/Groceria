@@ -15,13 +15,18 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AuthService } from './services/auth.service';
+import { FormComponent } from './components/form/form.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
     ListItemComponent,
-    SidebarComponent
+    SidebarComponent,
+    FormComponent,
+    AddItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,8 +36,10 @@ import { AuthService } from './services/auth.service';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

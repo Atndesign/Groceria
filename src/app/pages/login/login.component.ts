@@ -4,18 +4,14 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
   loginWithGoogle() {
-    console.log("Hello")
     this.authService.GoogleAuth();
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

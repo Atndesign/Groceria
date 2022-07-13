@@ -1,0 +1,29 @@
+  <div className="add">
+      <form className="add__form">
+        <label htmlFor="" className="form__label">
+          Nom du produit
+        </label>
+        <input
+          type="text"
+          className="form__input"
+          value={productName}
+          onChange={(e) => handleFormInput(e.target.value, setProductName)}
+        />
+        <label htmlFor="" className="form__label">
+          Quantité
+        </label>
+        <input
+          type="number"
+          className="form__input --small"
+          value={quantity}
+          onChange={(e) => handleFormInput(e.target.value, setQuantity)}
+        />
+        <button
+          className="form__submit"
+          type="submit"
+          onClick={(e) => handleFormSubmit(e)}
+        >
+          Ajouter
+        </button>
+      </form>
+    </div>

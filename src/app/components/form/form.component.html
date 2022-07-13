@@ -1,0 +1,13 @@
+<div class="add">
+  <form class="add__form" [formGroup]="addForm" (ngSubmit)="submit()">
+    <label htmlFor="" class="form__label"> Nom du produit </label>
+    <input type="text" class="form__input" formControlName="name" />
+    <label htmlFor="" class="form__label"> Quantité </label>
+    <input
+      type="number"
+      class="form__input --small"
+      formControlName="quantity"
+    />
+    <button class="form__submit" type="submit">Ajouter</button>
+  </form>
+</div>
