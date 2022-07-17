@@ -1,5 +1,5 @@
 export class Grocery {
-  id!: number;
+  _id!: string;
   quantity!: number;
   title!: string;
   isChecked!: boolean;

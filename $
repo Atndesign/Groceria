@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { map, Observable } from 'rxjs';
 import { Grocery } from 'src/app/model/grocery.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { GroceryService } from 'src/app/services/grocery.service';
@@ -14,22 +16,23 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   constructor(
     public authService: AuthService,
+    private store: AngularFirestore,
     private groceryService: GroceryService
   ) { }
 
   ngOnInit(): void { }
 
   ngAfterViewInit(): void {
-    this.groceryService.getGroceries().subscribe((rep: any) => {
-      this.groceries = rep.map((e: any) => {
-        return {
-          id: e.payload.doc.id,
-          ...(e.payload.doc.data() as Grocery)
-        }
-      })
-    })
+    this.store
+      .collection('list')
+      .doc(this.authService.userData.uid)
+      .collection('list')
+      .valueChanges().pipe(
+        map(values => {
+          console.log(values);
+        })
+      )
   }
-
 
   toggleEditMode(): void {
     this.isEditing = !this.isEditing;

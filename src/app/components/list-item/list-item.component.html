@@ -4,26 +4,16 @@
     {{ item.title }}
   </p>
   <div class="item__controls">
-    <button class="controls__btn">
-      <img
-        src="/assets/img/icons/trash.png"
-        alt="delete item"
-        srcSet="/assets/img/icons/trash.svg"
-        height="15"
-        width="14"
-      />
+    <button class="controls__btn" (click)="deleteItem(item.id)">
+      <img src="/assets/img/icons/trash.png" alt="delete item" srcSet="/assets/img/icons/trash.svg" height="15"
+        width="14" />
     </button>
     <button class="controls__btn" (click)="checkItem(item.id)">
-      <img
-        src="{{
+      <img src="{{
           isChecked == true
             ? '/assets/img/icons/checkmark.png'
             : '/assets/img/icons/checkmark-outline.png'
-        }}"
-        alt="checkmark"
-        width="18"
-        height="14"
-      />
+        }}" alt="checkmark" width="18" height="14" />
     </button>
   </div>
 </figure>

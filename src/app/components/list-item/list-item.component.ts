@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Grocery } from 'src/app/model/grocery.model';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { GroceryService } from 'src/app/services/grocery.service';
 
 @Component({
   selector: 'app-list-item',
@@ -9,16 +11,22 @@ import { Grocery } from 'src/app/model/grocery.model';
 })
 export class ListItemComponent implements OnInit {
   @Input()
-  item: Grocery = new Grocery();
+  item: any;
 
   isChecked: boolean = false;
 
-  constructor(private fs: AngularFirestore) {}
+  constructor(private fs: AngularFirestore, private authService: AuthService, private groceryService: GroceryService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isChecked = this.item.isChecked;
+  }
 
-  public checkItem(id: number): void {
+  public checkItem(id: string): void {
     this.isChecked = !this.isChecked;
     console.log(id);
   }
-}
+
+  public deleteItem(id: string): void {
+    this.groceryService.deleteGrocery(id)
+  }
+} 
